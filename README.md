@@ -10,7 +10,7 @@ $ npm install quickie
 
 ##### Folder Structure
 
-Quicky looks at your templates folder automatically configures routes to those pages. It also supplies a safe place for you to keep your static assets (css, js, images, anything you'll be attempting to access from the front-end).
+Quicky looks at your templates folder and automatically configures routes to those pages. It also supplies a safe place for you to keep your static assets (css, js, images, anything you'll be attempting to access from the front-end).
 
 If you're not planning on doing any customization, Quickie only expects that you keep your html files in a "pages" folder and your static assets in a folder called "public". Your project should probably look something like this:
 

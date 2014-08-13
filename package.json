@@ -1,0 +1,25 @@
+{
+  "name": "quickie",
+  "version": "0.0.0",
+  "description": "A tiny framework for serving statics sites with node.",
+  "main": "quickie.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/colpanik/quickie"
+  },
+  "keywords": [
+    "framework",
+    "static",
+    "server",
+    "html"
+  ],
+  "author": "Kerry Gilbert <kerry@punkave.com> (http://punkave.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colpanik/quickie/issues"
+  },
+  "homepage": "https://github.com/colpanik/quickie"
+}

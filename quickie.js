@@ -5,7 +5,7 @@ var fs = require('fs');
 
 module.exports = {
   site: function(options) {
-    return new QuickySite(options)
+    return new QuickySite(options);
   }
 }
 
@@ -35,7 +35,7 @@ var QuickySite = function(options) {
     if(self.renderer) {
       return self.renderer(markup.toString(), data);
     } else {
-      return data;
+      return markup;
     }
   }
 
@@ -65,8 +65,6 @@ var QuickySite = function(options) {
     self.addRoute('/', function(req, res){
       return self.sendPage(req, res, 'index');
     });
-
-    return self;
   }
 
   self.listen = function(port) {
@@ -78,4 +76,6 @@ var QuickySite = function(options) {
     server.listen(port);
     console.log('Server listening at '+port);
   }
+
+  return self;
 }

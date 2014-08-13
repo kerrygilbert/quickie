@@ -21,8 +21,8 @@ var QuickySite = function(options) {
   }
 
   self.dirname = self.options.dirname;
-  self.staticPrefix = self.options.pages || 'public/';
-  self.pagePrefix = self.options.pages || 'pages/';
+  self.staticPrefix = self.options.assets || 'public/';
+  self.pagePrefix = self.options.tempaltes || 'pages/';
   self.renderer = self.options.render || null;
   
   self.app = Router();

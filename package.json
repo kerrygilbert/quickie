@@ -1,6 +1,6 @@
 {
   "name": "quickie",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A tiny framework for serving statics sites with node.",
   "main": "quickie.js",
   "scripts": {

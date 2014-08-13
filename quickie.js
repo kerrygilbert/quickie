@@ -31,23 +31,23 @@ var QuickySite = function(options) {
     return self.app.addRoute(match, callback);
   }
 
-  self.renderPage = function(data) {
+  self.renderPage = function(markup, data) {
     if(self.renderer) {
-      return self.renderer(data.toString());
+      return self.renderer(markup.toString(), data);
     } else {
       return data;
     }
   }
 
-  self.sendPage = function(req, res, pageName) {
+  self.sendPage = function(req, res, pageName, data) {
     var path = self.pagePrefix + pageName;
-    fs.readFile(path + '.html', function (err, data) {
+    fs.readFile(path + '.html', function (err, markup) {
       if (err) {
         console.log('404: ')
         res.end("404! We can't find that page.");
       } else {
         res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end(self.renderPage(data));
+        res.end(self.renderPage(markup, data));
       }
     });
   }

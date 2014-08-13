@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "routes-router": "*",
+    "st": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/colpanik/quickie"

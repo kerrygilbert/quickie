@@ -22,8 +22,9 @@ var QuickySite = function(options) {
 
   self.dirname = self.options.dirname;
   self.staticPrefix = self.options.assets || 'public/';
-  self.pagePrefix = self.options.tempaltes || 'pages/';
+  self.pagePrefix = self.options.tempaltes || 'templates/';
   self.renderer = self.options.render || null;
+  self.extension = self.options.extension || '.html';
   
   self.app = Router();
 
@@ -40,8 +41,8 @@ var QuickySite = function(options) {
   }
 
   self.sendPage = function(req, res, pageName, data) {
-    var path = self.pagePrefix + pageName;
-    fs.readFile(path + '.html', function (err, markup) {
+    var path = self.pagePrefix + pageName + self.extension;
+    fs.readFile(path, function (err, markup) {
       if (err) {
         console.log('404: ')
         res.end("404! We can't find that page.");

@@ -62,23 +62,27 @@ var quickie = require('quickie').site({
 ##### assets (string)
 Use this option if your you'd like your static assets folder to be called something other than "public".
 
+```javascript
 var quickie = require('quickie').site({
   dirname: __dirname,
   assets: 'static/',
 }).listen();
+```
 
 ##### templates (string)
 Use this option if your you'd like your templates to live in a folder called something other than "pages".
 
+```javascript
 var quickie = require('quickie').site({
   dirname: __dirname,
   templates: 'views/',
 }).listen();
+```
 
 ##### render (function)
 Use this option if you're trying to get fancy with a custom template rendering engine. I like to use nunjucks with mine:
 
-```
+```javascript
 var nunjucks = require('nunjucks');
 
 var quickie = require('quickie').site({
@@ -96,7 +100,7 @@ You might be asking yourself where that data is coming from. See the next sectio
 ##### extension (string)
 Use this option if your templates have a file extension other than '.html'. In the previous example, we set up nunjucks as our renderer. Nunjucks uses the '.html' file extension so we didn't need to specify an alternative file extension. If we wanted to use Jade, we could have written it like so:
 
-```
+```javascript
 var jade = require('jade');
 
 var quickie = require('quickie').site({
@@ -111,7 +115,7 @@ var quickie = require('quickie').site({
 ## Adding Routes and passing data
 You can add custom routes to your Quickie site before calling the listen method.
 
-```
+```javascript
 var nunjucks = require('nunjucks');
 
 var site = require('quickie').site({
@@ -133,3 +137,9 @@ site.listen();
 ```
 ##### sendpage(req, res, pageName, [data]);
 That sendPage method takes req, res, pageName, and data. The pageName should be a string and '.html' will automatically be appended to it unless you have specified otherwise using the extension option.
+
+## Other Stuff
+
+##### What about CSS Precompilers?
+
+I thought about building this feature into quickie but in the interest of keeping the module succinct and focused, I decided against it. If you'd like to use LESS with your project instead of CSS, I recommend trying out [Less Before Listen](https://github.com/colpanik/less-before-listen)
